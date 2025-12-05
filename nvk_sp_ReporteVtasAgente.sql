@@ -1,4 +1,4 @@
---EXEC dbo.nvk_sp_ReporteVtasAgente '8146',NULL,9,2025
+--EXEC dbo.nvk_sp_ReporteVtasAgente 2025,9,'8146',NULL
 
 SET DATEFIRST 7  
 SET ANSI_NULLS OFF  
@@ -10,10 +10,11 @@ IF EXISTS (SELECT * FROM SYSOBJECTS WHERE ID=OBJECT_ID('dbo.nvk_sp_ReporteVtasAg
 DROP PROCEDURE dbo.nvk_sp_ReporteVtasAgente
 GO
 CREATE PROC dbo.nvk_sp_ReporteVtasAgente
-@Agente			varchar(10),
-@Usuario		VARCHAR(10),
+@Ejercicio		INT,
 @Periodo		INT,
-@Ejercicio		INT		
+@Agente			varchar(10),
+@Usuario		VARCHAR(10)
+	
 AS
 BEGIN
 DECLARE
@@ -41,6 +42,7 @@ DECLARE
 
 DECLARE @nvk_tbl_VentasAgentes TABLE (
 	Gerente				VARCHAR(10)		NULL,
+	Trimestre			INT,
 	Periodo					INT,
 	Ejercicio					INT,
 	Agente						VARCHAR(10),
@@ -159,6 +161,12 @@ SELECT
 				AND		LEFT(Equipo, 2) <> 'AV'
 				),'DMOLINA')  AS Gerente,
 
+	CASE WHEN MONTH(FechaEmision) IN (1,2,3) THEN 1
+		 WHEN MONTH(FechaEmision) IN (4,5,6) THEN 2
+		 WHEN MONTH(FechaEmision) IN (7,8,9) THEN 3
+		 WHEN MONTH(FechaEmision) IN (10,11,12) THEN 4
+			ELSE 0 END AS Trimestre,
+
 	MONTH(FechaEmision)		AS Periodo, 
 	YEAR(FechaEmision)		AS Ejercicio , 
 	v.AgenteMovimiento		AS Agente,
@@ -191,9 +199,6 @@ SELECT
 	GROUP BY a.Agente,v.AgenteMovimiento,MONTH(FechaEmision),YEAR(FechaEmision),a.Nombre,a.Estatus
 	ORDER BY MONTH(FechaEmision),YEAR(FechaEmision),v.AgenteMovimiento
 
-	   --GROUP BY A.Agente,v.AgenteCliente,v.AgenteMovimiento,(FechaEmision),YEAR(FechaEmision),a.Nombre,a.Estatus--,b.Agente   V.AgenteMovimiento,
-	   --ORDER BY MONTH(FechaEmision),YEAR(FechaEmision),v.AgenteMovimiento
-	
 SELECT * FROM @nvk_tbl_VentasAgentes
 
 --SELECT Ejercicio,Periodo,Agente,NombreAgente, Valor,Importe 
