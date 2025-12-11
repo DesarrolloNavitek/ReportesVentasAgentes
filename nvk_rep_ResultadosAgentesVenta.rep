@@ -4,7 +4,6 @@ Clave=nvk_rep_ResultadosAgentesVenta
 Nombre=<T>Resultados de Agentes de Venta<T>
 Icono=0
 Tipo=Reporte
-SubmenuPreliminar=S
 ImpresoraEspecifica=(por Omisión)
 ImpresoraPixeles=(Auto)
 ImpresoraFactor=(Auto)
@@ -28,17 +27,17 @@ Puerto=LPT1
 Parametros=S
 
 BarraHerramientas=S
-Menus=S
 OtroOrden=S
 VistaEspecial=S
 ListaOrden=(Lista)
 PosicionInicialAlturaCliente=912
 PosicionInicialAncho=972
-ListaAcciones=(Lista)
-PreliminarColores=S
 ConFormaPrevia=S
 FormaPrevia=nvk_EspecificarEjercicioPeriodoAgente_Res
 PreliminarSinRetroceder=S
+ListaAcciones=(Lista)
+ImprimirDirectamente=S
+PreliminarColores=S
 [Vista]
 Icono=0
 Clave=ResultadosAgentesVenta
@@ -512,70 +511,8 @@ FondoEstilo=-1
 
 
 BordeAbajo=N
-[Acciones.&Cerrar]
-Nombre=&Cerrar
-Boton=5
-NombreDesplegar=Cerrar
-EnBarraHerramientas=S
-EnMenu=S
-TipoAccion=Ventana
-ClaveAccion=Cerrar
-Activo=S
-Visible=S
 
 
-NombreEnBoton=S
-BarraBotonesAccionAgrupar=S
-[Acciones.E&xcel]
-Nombre=E&xcel
-Boton=115
-NombreDesplegar=Excel
-EnBarraHerramientas=S
-EnMenu=S
-TipoAccion=Reportes Excel
-ClaveAccion=nvk_rep_ResultadosAgentesVenta
-ListaParametros=S
-Activo=S
-Visible=S
-
-
-
-
-
-
-
-NombreEnBoton=S
-BarraBotonesAccionAgrupar=S
-[Acciones.&Imprimir]
-Nombre=&Imprimir
-Boton=4
-NombreDesplegar=Imprimir
-EnBarraHerramientas=S
-EnMenu=S
-TipoAccion=Reportes Impresora
-Activo=S
-Visible=S
-
-
-
-
-
-
-
-
-
-NombreEnBoton=S
-
-
-
-
-
-
-
-
-BarraBotonesAccionAgrupar=S
-ClaveAccion=nvk_rep_ResultadosAgentesVenta
-ListaParametros=S
 [Linea6]
 Clave=Inicio: Agente
 Objetos=2
@@ -2680,6 +2617,103 @@ Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no
 
 
 
+
+
+
+
+
+
+[Acciones.Cerrar]
+Nombre=Cerrar
+Boton=21
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cancelar/Cancelar Cambios
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+[Acciones.Imprimir]
+Nombre=Imprimir
+Boton=4
+NombreEnBoton=S
+NombreDesplegar=&Imprimir
+EnBarraHerramientas=S
+TipoAccion=Reportes Impresora
+ClaveAccion=nvk_rep_ResultadosAgentesVenta
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+[Acciones.Excel]
+Nombre=Excel
+Boton=115
+NombreEnBoton=S
+NombreDesplegar=E&xcel
+EnBarraHerramientas=S
+TipoAccion=Reportes Excel
+ClaveAccion=nvk_rep_ResultadosAgentesVenta
+Activo=S
+Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [Reporte.ListaOrden]
 (Inicio)=Agente	(Acendente)
 Agente	(Acendente)=Trimestre	(Acendente)
@@ -2687,7 +2721,7 @@ Trimestre	(Acendente)=Periodo	(Acendente)
 Periodo	(Acendente)=(Fin)
 
 [Reporte.ListaAcciones]
-(Inicio)=&Cerrar
-&Cerrar=&Imprimir
-&Imprimir=E&xcel
-E&xcel=(Fin)
+(Inicio)=Cerrar
+Cerrar=Imprimir
+Imprimir=Excel
+Excel=(Fin)
