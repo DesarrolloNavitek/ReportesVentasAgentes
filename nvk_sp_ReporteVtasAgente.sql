@@ -173,8 +173,8 @@ SELECT
 	a.Nombre,
 	a.Estatus,
 	@GrupoAgente			AS 'GrupoAgente',
-
-    (SUM(ImporteFactura)-SUM(ImporteDevuelto)-SUM(ImporteCancelado)+SUM(ImporteAnticipo)-SUM(ImporteAplicacion)-SUM(ImporteNotaCred)) AS  Facturado,
+(SUM(ImporteFactura)-SUM(ImporteDevuelto)-SUM(ImporteCancelado) + SUM(ImporteCancelNCargo)-SUM(ImporteNotaCred)) AS  Facturado,
+    --(SUM(ImporteFactura)-SUM(ImporteDevuelto)-SUM(ImporteCancelado)+SUM(ImporteAnticipo)-SUM(ImporteAplicacion)-SUM(ImporteNotaCred)) AS  Facturado,
 	
 	CASE WHEN MONTH(FechaEmision) = 1 THEN (MAX(ISNULL(Enero,0)))
 		 WHEN MONTH(FechaEmision) = 2 THEN (MAX(ISNULL(Febrero,0)))
@@ -208,3 +208,4 @@ SELECT * FROM @nvk_tbl_VentasAgentes
 --) AS Resultado
 
 END
+
