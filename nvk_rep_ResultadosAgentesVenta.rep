@@ -32,12 +32,13 @@ Menus=S
 OtroOrden=S
 VistaEspecial=S
 ListaOrden=(Lista)
-PosicionInicialAlturaCliente=879
-PosicionInicialAncho=1396
+PosicionInicialAlturaCliente=912
+PosicionInicialAncho=972
 ListaAcciones=(Lista)
 PreliminarColores=S
 ConFormaPrevia=S
-FormaPrevia=nvk_EspecificarEjercicioPeriodoAgente
+FormaPrevia=nvk_EspecificarEjercicioPeriodoAgente_Res
+PreliminarSinRetroceder=S
 [Vista]
 Icono=0
 Clave=ResultadosAgentesVenta
@@ -46,14 +47,14 @@ VistaIndependiente=S
 ListaCampos=(Lista)
 SQL=EXEC dbo.nvk_sp_ReporteVtasAgente <T>{Info.Ejercicio}<T>,<T>{Info.Periodo}<T>,<T>{Info.Agente}<T>,<T>{Info.Usuario}<T>
 [Formato]
-VentanaIzquierda=18
-VentanaArriba=0
-VentanaAltura=1010
-VentanaAncho=1884
+VentanaIzquierda=520
+VentanaArriba=154
+VentanaAltura=847
+VentanaAncho=1168
 PanelArriba=120
 PanelBotones=80
 
-ListaLineas=Encabezado<BR>Encabezado<BR>Título<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Periodo<BR>Fin: Trimestre<BR>Fin: Agente<BR>Final<BR>Pie<BR>Pie
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Título<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Periodo<BR>Fin: Trimestre<BR>Fin: Agente<BR>Pie<BR>Pie<BR>Pie
 [Gerente]
 Clave=Gerente
 Nombre=Gerente
@@ -158,50 +159,56 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 [Linea3]
-Clave=Título
-Objetos=4
-Seccion=Título
+Clave=Encabezado
+Objetos=3
+Seccion=Encabezado Página
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, [Negritas]}
 AVertical=Centrado
 
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 [Linea4]
-Clave=Inicio: Agente
-Seccion=Inicio Grupo
-AltoEnCm=1
+Clave=Encabezado
+Seccion=Encabezado Página
+AltoEnCm=0.4
 Renglones=1
 EstiloMarco=-1
 FondoColor=Blanco
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 8, Negro, [Negritas]}
 AVertical=Centrado
 
-Grupo=Agente
-Objetos=2
+Grupo=
+Objetos=4
 EstiloArriba=-1
 EstiloAbajo=-1
 EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 [Linea5]
-Clave=Inicio: Agente
-Seccion=Inicio Grupo
+Clave=Título
+Seccion=Título
 AltoEnCm=0.4
 Renglones=1
 Marco=N
-EstiloMarco=-1
+EstiloMarco=0
 FondoColor=Blanco
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 8, Negro, [Negritas]}
 AVertical=Centrado
 
-Objetos=2
-Grupo=Agente
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
+Objetos=3
+Grupo=
+EstiloArriba=0
+EstiloAbajo=0
+EstiloIzquierdo=0
+EstiloDerecho=0
+FondoEstilo=0
 
 
 
@@ -327,7 +334,7 @@ AlturaVariable=S
 [A3]
 Celda=A3
 Alineacion=Izquierda
-AnchoEnCm=0.15
+AnchoEnCm=0.26
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -352,7 +359,7 @@ FondoEstilo=-1
 [B3]
 Celda=B3
 Alineacion=Izquierda
-AnchoEnCm=2.89
+AnchoEnCm=3
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -369,11 +376,17 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 Expresion=
 
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 [C3]
 Celda=C3
-Alineacion=Izquierda
-AnchoEnCm=13.3
-AnchoTexto=72
+Alineacion=Derecha
+AnchoEnCm=16.1
+AnchoTexto=87
 FondoColor=Blanco
 AVertical=Centrado
 TipoImagen=Estirada
@@ -399,7 +412,7 @@ EstiloAbajo=-1
 EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
-Expresion=<T>GENERADOR POR AGENTE, PARA EL AÑO<T>+<T> <T>+Ejercicio+<T>.<T>
+Expresion=<T>Fecha Rep:<T>+<T> <T>+ Ahora
 
 [D2]
 Celda=D2
@@ -427,10 +440,13 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 
-[D3]
-Celda=D3
+AlturaVariable=N
+ExpresionMultiple=N
+
+[A4]
+Celda=A4
 Alineacion=Izquierda
-AnchoEnCm=3
+AnchoEnCm=0.26
 AnchoTexto=16
 EstiloMarco=-1
 EstiloArriba=-1
@@ -451,37 +467,11 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>Hoja<T>+<T> <T>+ReportePaginaNumero
-
-[A4]
-Celda=A4
-Alineacion=Izquierda
-AnchoEnCm=0.15
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
 
 
 
 
-BordeAbajo=S
+BordeAbajo=N
 [A5]
 Celda=A5
 Alineacion=Izquierda
@@ -495,7 +485,7 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 8, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
@@ -588,9 +578,9 @@ ClaveAccion=nvk_rep_ResultadosAgentesVenta
 ListaParametros=S
 [Linea6]
 Clave=Inicio: Agente
-Objetos=1
+Objetos=2
 Seccion=Inicio Grupo
-AltoEnCm=0.1
+AltoEnCm=1
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
@@ -608,7 +598,7 @@ Visible=
 [A6]
 Celda=A6
 Alineacion=Izquierda
-AnchoEnCm=3
+AnchoEnCm=0.15
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -673,9 +663,10 @@ FondoEstilo=-1
 
 
 
+BordeAbajo=S
 [Linea7]
 Clave=Inicio: Agente
-Objetos=8
+Objetos=2
 Seccion=Inicio Grupo
 AltoEnCm=0.4
 Renglones=1
@@ -691,33 +682,34 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 [Linea8]
-Clave=Inicio: Periodo
-Objetos=8
+Clave=Inicio: Agente
+Objetos=1
 Seccion=Inicio Grupo
-AltoEnCm=0.4
+AltoEnCm=0.1
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
 AVertical=Centrado
 
-Grupo=Periodo
+Grupo=Agente
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
 EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
+Visible=
 [B5]
 Celda=B5
 Alineacion=Izquierda
-AnchoEnCm=19.2
-AnchoTexto=103
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
+AnchoEnCm=2.89
+AnchoTexto=16
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+EstiloIzquierdo=0
+EstiloDerecho=0
+FondoEstilo=0
 FondoColor=Blanco
 AVertical=Centrado
 TipoImagen=Estirada
@@ -726,12 +718,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 8, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>RESULTADO EN VENTAS<T>
+Expresion=
 
 
 
@@ -766,9 +758,9 @@ FondoEstilo=-1
 ExpresionMultiple=N
 Expresion=
 [Linea9]
-Clave=Fin: Trimestre
+Clave=Inicio: Agente
 Objetos=8
-Seccion=Fin Grupo
+Seccion=Inicio Grupo
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
@@ -776,7 +768,7 @@ Fuente={Arial, 8, Negro, []}
 AVertical=Centrado
 
 
-Grupo=Trimestre
+Grupo=Agente
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
@@ -786,7 +778,7 @@ FondoEstilo=-1
 [A9]
 Celda=A9
 Alineacion=Izquierda
-AnchoEnCm=0.18
+AnchoEnCm=0.15
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -838,9 +830,9 @@ FondoEstilo=-1
 
 
 [Linea10]
-Clave=Fin: Agente
-Objetos=8
-Seccion=Fin Grupo
+Clave=Inicio: Agente
+Objetos=2
+Seccion=Inicio Grupo
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
@@ -856,17 +848,19 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 
+ImprimirAlFinal=N
+Visible=
 [Linea11]
-Clave=Final
-Objetos=1
-Seccion=Final
+Clave=Inicio: Periodo
+Objetos=8
+Seccion=Inicio Grupo
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
 AVertical=Centrado
 
-Grupo=
+Grupo=Periodo
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
@@ -874,10 +868,12 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 
+ImprimirAlFinal=N
+Visible=Info.Desglosar=<T>Si<T>
 [A11]
 Celda=A11
 Alineacion=Izquierda
-AnchoEnCm=0.15
+AnchoEnCm=0.18
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -895,129 +891,19 @@ TablaAnchoTotales=(Auto)
 
 
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
-
-
-
-
-
-[C8]
-Celda=C8
-Alineacion=Izquierda
-AnchoEnCm=2
-AnchoTexto=16
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
 EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-
-[D8]
-Celda=D8
-Alineacion=Derecha
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=Cuota
-
-
-
-FormatoValidacion=(Monetario)
-TextoConFlujo=N
-AlturaVariable=N
-
-[C10]
-Celda=C10
-Alineacion=Izquierda
-AnchoEnCm=2
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-
-[D10]
-Celda=D10
-Alineacion=Derecha
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=SUmaTotal(Cuota)
 
 
 
 
-FormatoValidacion=(Monetario)
+
+
+
 
 
 [Periodo]
@@ -1044,16 +930,16 @@ ClaveBDE=Cuota
 
 
 [Linea12]
-Clave=Pie
-Objetos=2
-Seccion=Pie Página
+Clave=Fin: Trimestre
+Objetos=8
+Seccion=Fin Grupo
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
 AVertical=Centrado
 
-Grupo=
+Grupo=Trimestre
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
@@ -1061,10 +947,11 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 
+ImprimirAlFinal=N
 [A12]
 Celda=A12
 Alineacion=Izquierda
-AnchoEnCm=0.15
+AnchoEnCm=0.18
 AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
@@ -1081,18 +968,18 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 
 [B7]
 Celda=B7
-Alineacion=Centrado
-AnchoEnCm=3.51
-AnchoTexto=16
+Alineacion=Izquierda
+AnchoEnCm=19.2
+AnchoTexto=103
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
@@ -1107,12 +994,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 10, Negro, []}
+Fuente={Arial, 8, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>Mes<T>
+Expresion=<T>RESULTADO EN VENTAS<T>
 
 
 
@@ -1135,34 +1022,11 @@ Expresion=<T>Mes<T>
 AlturaVariable=N
 TextoConFlujo=N
 FormatoValidacion=
-[C7]
-Celda=C7
-Alineacion=Izquierda
-AnchoEnCm=2
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
 
-[D7]
-Celda=D7
-Alineacion=Centrado
+
+[B10]
+Celda=B10
+Alineacion=Izquierda
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -1179,54 +1043,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 10, Negro, []}
+Fuente={Arial, 8, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>Cuota<T>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AlturaVariable=N
-TextoConFlujo=N
-FormatoValidacion=
-[B10]
-Celda=B10
-Alineacion=Centrado
-AnchoEnCm=3.51
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=<T>ANUAL<T>
+Expresion=<T>División<T>
 
 
 
@@ -1312,84 +1134,6 @@ TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
-[E7]
-Celda=E7
-Alineacion=Izquierda
-AnchoEnCm=2.49
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-
-[F7]
-Celda=F7
-Alineacion=Centrado
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 10, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=<T>Facturado<T>
-
-TextoConFlujo=N
-AlturaVariable=N
-FormatoValidacion=
-[G7]
-Celda=G7
-Alineacion=Izquierda
-AnchoEnCm=2.19
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
 
 
 
@@ -1419,199 +1163,29 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 Expresion=<T>%Fac<T>
 
-[H7]
-Celda=H7
-Alineacion=Centrado
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 10, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=<T>%Fac<T>
-
-TextoConFlujo=N
-AlturaVariable=N
-
-
-FormatoValidacion=
-
-
-
-
-
-
-
-
 
 [Linea13]
-Clave=Pie
-Objetos=3
-Seccion=Pie Página
+Clave=Fin: Agente
+Objetos=8
+Seccion=Fin Grupo
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
 AVertical=Centrado
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
-Grupo=
-[B8]
-Celda=B8
-Alineacion=Centrado
-FormatoValidacion=
-AnchoEnCm=3.51
-TextoConFlujo=N
-AlturaVariable=N
-AnchoTexto=16
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
 EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=Caso Periodo<BR>  Es 1 Entonces <T>ENE<T><BR>  Es 2 Entonces <T>FEB<T><BR>  Es 3 Entonces <T>MAR<T><BR>  Es 4 Entonces <T>ABR<T><BR>  Es 5 Entonces <T>MAY<T><BR>  Es 6 Entonces <T>JUN<T><BR>  Es 7 Entonces <T>JUL<T><BR>  Es 8 Entonces <T>AGO<T><BR>  Es 9 Entonces <T>SEP<T><BR>  Es 10 Entonces <T>OCT<T><BR>  Es 11 Entonces <T>NOV<T><BR>  Es 12 Entonces <T>DIC<T><BR>Sino<BR><T><T><BR>Fin
+Grupo=Agente
+ImprimirAlFinal=S
 
-[E8]
-Celda=E8
-Alineacion=Izquierda
-AnchoEnCm=2.49
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
 
-[F8]
-Celda=F8
-Alineacion=Derecha
-FormatoValidacion=(Monetario)
-AnchoEnCm=3
-TextoConFlujo=N
-AlturaVariable=N
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=Facturado
 
-[G8]
-Celda=G8
-Alineacion=Izquierda
-AnchoEnCm=2.19
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
 
-[H8]
-Celda=H8
-Alineacion=Derecha
-FormatoValidacion=(Monetario)
-AnchoEnCm=3
-TextoConFlujo=N
-AlturaVariable=N
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=Facturado/Cuota/100*100
 
 [A13]
 Celda=A13
@@ -1633,20 +1207,20 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 
 [B4]
 Celda=B4
 Alineacion=Izquierda
-AnchoEnCm=19.2
-ExpresionMultiple=S
-AnchoTexto=103
-BordeAbajo=S
+AnchoEnCm=3
+ExpresionMultiple=N
+AnchoTexto=16
+BordeAbajo=N
 EstiloMarco=-1
 EstiloArriba=-1
 EstiloAbajo=-1
@@ -1661,12 +1235,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 8, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>Zona: <T>+GrupoAgente<BR><T>Agente: <T>+Agente+<T> - <T>+NombreAgente
+Expresion=
 
 
 
@@ -1704,7 +1278,7 @@ ClaveBDE=Trimestre
 
 [B9]
 Celda=B9
-Alineacion=Centrado
+Alineacion=Izquierda
 AnchoEnCm=3.51
 AnchoTexto=16
 FondoColor=Blanco
@@ -1715,12 +1289,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
+Fuente={Arial, 10, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=Caso  Trimestre<BR>  Es 1 Entonces <T>1° TRIM<T><BR>  Es 2 Entonces <T>2° TRIM<T><BR>  Es 3 Entonces <T>3° TRIM<T><BR>  Es 4 Entonces <T>4° TRIM<T><BR>Sino<BR><T><T><BR>Fin
+Expresion=<T>Mes<T>
 
 
 
@@ -1751,9 +1325,9 @@ FondoEstilo=-1
 
 [B12]
 Celda=B12
-Alineacion=Izquierda
-AnchoEnCm=19.2
-AnchoTexto=103
+Alineacion=Centrado
+AnchoEnCm=3.51
+AnchoTexto=16
 FondoColor=Blanco
 AVertical=Centrado
 TipoImagen=Estirada
@@ -1762,21 +1336,21 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial Black, 8, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación <BR>a la cuota de Ventas. El total de días vencidos sólamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
+Expresion=Caso  Trimestre<BR>  Es 1 Entonces <T>1° TRIM<T><BR>  Es 2 Entonces <T>2° TRIM<T><BR>  Es 3 Entonces <T>3° TRIM<T><BR>  Es 4 Entonces <T>4° TRIM<T><BR>Sino<BR><T><T><BR>Fin
 
 
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 
 
 [C9]
@@ -1806,8 +1380,8 @@ TablaAnchoTotales=(Auto)
 
 [D9]
 Celda=D9
-Alineacion=Derecha
-FormatoValidacion=(Monetario)
+Alineacion=Centrado
+FormatoValidacion=
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -1824,12 +1398,12 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
+Fuente={Arial, 10, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=SUMA(Cuota)
+Expresion=<T>Cuota<T>
 
 
 
@@ -1862,8 +1436,8 @@ TablaAnchoTotales=(Auto)
 
 [F9]
 Celda=F9
-Alineacion=Derecha
-FormatoValidacion=(Monetario)
+Alineacion=Centrado
+FormatoValidacion=
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -1880,67 +1454,15 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
+Fuente={Arial, 10, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=SUMA(Facturado)
-
-[E10]
-Celda=E10
-Alineacion=Izquierda
-AnchoEnCm=2.49
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-
-[F10]
-Celda=F10
-Alineacion=Derecha
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
+Expresion=<T>Facturado<T>
 
 
 
-FormatoValidacion=(Monetario)
-Expresion=SumaTotal( FActurado )
 [G9]
 Celda=G9
 Alineacion=Izquierda
@@ -1968,7 +1490,7 @@ TablaAnchoTotales=(Auto)
 
 [H9]
 Celda=H9
-Alineacion=Derecha
+Alineacion=Centrado
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -1985,68 +1507,15 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
+Fuente={Arial, 10, Negro, []}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
-FormatoValidacion=(Monetario)
-Expresion=SUMA(Facturado/Cuota/100*100)
-[G10]
-Celda=G10
-Alineacion=Izquierda
-AnchoEnCm=2.19
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
+FormatoValidacion=
+Expresion=<T>%Fac<T>
 
-[H10]
-Celda=H10
-Alineacion=Derecha
-AnchoEnCm=3
-AnchoTexto=16
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial Black, 8, Negro, [Negritas]}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-
-
-
-FormatoValidacion=(Monetario)
-Expresion=SumaTotal(Facturado/Cuota/100*100)
 
 [C12]
 Celda=C12
@@ -2075,7 +1544,7 @@ TablaAnchoTotales=(Auto)
 
 [D12]
 Celda=D12
-Alineacion=Centrado
+Alineacion=Derecha
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -2099,7 +1568,7 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
 FormatoValidacion=(Monetario)
-Expresion=SUmaTotal(Cuota)
+Expresion=SUMA(Cuota)
 
 
 [C15]
@@ -2139,7 +1608,7 @@ Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no
 [A10]
 Celda=A10
 Alineacion=Izquierda
-AnchoEnCm=0.15
+AnchoEnCm=0.26
 AnchoTexto=16
 EstiloMarco=-1
 EstiloArriba=-1
@@ -2188,7 +1657,7 @@ TablaAnchoTotales=(Auto)
 
 [F12]
 Celda=F12
-Alineacion=Centrado
+Alineacion=Derecha
 FormatoValidacion=(Monetario)
 AnchoEnCm=3
 AnchoTexto=16
@@ -2211,7 +1680,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=SumaTotal( FActurado )
+Expresion=SUMA(Facturado)
 
 [G12]
 Celda=G12
@@ -2263,13 +1732,13 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=SumaTotal(Facturado/Cuota/100*100)
+Expresion=SUMA(Facturado/Cuota/100*100)
 
 [B14]
 Celda=B14
 Alineacion=Izquierda
-AnchoEnCm=3.3
-AnchoTexto=18
+AnchoEnCm=19.2
+AnchoTexto=103
 FondoColor=Blanco
 AVertical=Centrado
 TipoImagen=Estirada
@@ -2283,22 +1752,22 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=Usuario
+Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación <BR>a la cuota de Ventas. El total de días vencidos sólamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
 
 
 
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+EstiloIzquierdo=0
+EstiloDerecho=0
+FondoEstilo=0
 
 
 [A8]
 Celda=A8
 Alineacion=Izquierda
-AnchoEnCm=0.18
+AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
 EstiloArriba=-1
@@ -2327,32 +1796,7 @@ TablaAnchoTotales=(Auto)
 
 
 
-[B13]
-Celda=B13
-Alineacion=Izquierda
-AnchoEnCm=3.3
-AnchoTexto=18
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=Usuario
 
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
 [C14]
 Celda=C14
 Alineacion=Derecha
@@ -2378,62 +1822,6 @@ TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no otros <BR>documentos que afectan el estado de cuenta del cliente.<T>
-
-
-
-[C13]
-Celda=C13
-Alineacion=Derecha
-AnchoEnCm=15.89
-AnchoTexto=85
-EstiloMarco=-1
-EstiloArriba=-1
-EstiloAbajo=-1
-EstiloIzquierdo=-1
-EstiloDerecho=-1
-FondoEstilo=-1
-FondoColor=Blanco
-AVertical=Centrado
-TipoImagen=Estirada
-CBAncho=12
-CBMostrarCodigo=S
-CBDigitoVerificador=S
-CBTipo=UPC A
-CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
-TablaAncho=(Auto)
-TablaAnchoCeldas=(Auto)
-TablaAnchoTituloRenglon=(Auto)
-TablaAnchoTotales=(Auto)
-Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no otros <BR>documentos que afectan el estado de cuenta del cliente.<T>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2472,6 +1860,821 @@ Trimestre=(Fin)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Linea14]
+Clave=Pie
+Objetos=1
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+ImprimirAlFinal=N
+[Linea15]
+Clave=Pie
+Objetos=2
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+ImprimirAlFinal=N
+[C4]
+Celda=C4
+Alineacion=Izquierda
+AnchoEnCm=11.39
+AnchoTexto=61
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>GENERADOR POR AGENTE, PARA EL AÑO<T>+<T> <T>+Ejercicio+<T>.<T>
+
+[D4]
+Celda=D4
+Alineacion=Derecha
+AnchoEnCm=4.7
+AnchoTexto=25
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+Expresion=<T>Hoja:<T>+<T> <T>+  ReportePaginaNumero
+[C5]
+Celda=C5
+Alineacion=Izquierda
+AnchoEnCm=13.3
+AnchoTexto=72
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B6]
+Celda=B6
+Alineacion=Izquierda
+AnchoEnCm=19.2
+ExpresionMultiple=S
+AnchoTexto=103
+BordeAbajo=S
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Zona: <T>+GrupoAgente<BR><T>Agente: <T>+Agente+<T> - <T>+NombreAgente
+
+[B11]
+Celda=B11
+Alineacion=Izquierda
+AnchoEnCm=3.51
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Caso Periodo<BR>  Es 1 Entonces <T>ENE<T><BR>  Es 2 Entonces <T>FEB<T><BR>  Es 3 Entonces <T>MAR<T><BR>  Es 4 Entonces <T>ABR<T><BR>  Es 5 Entonces <T>MAY<T><BR>  Es 6 Entonces <T>JUN<T><BR>  Es 7 Entonces <T>JUL<T><BR>  Es 8 Entonces <T>AGO<T><BR>  Es 9 Entonces <T>SEP<T><BR>  Es 10 Entonces <T>OCT<T><BR>  Es 11 Entonces <T>NOV<T><BR>  Es 12 Entonces <T>DIC<T><BR>Sino<BR><T><T><BR>Fin
+
+[C11]
+Celda=C11
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D11]
+Celda=D11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Cuota
+
+[E11]
+Celda=E11
+Alineacion=Izquierda
+AnchoEnCm=2.49
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F11]
+Celda=F11
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Facturado
+
+[G11]
+Celda=G11
+Alineacion=Izquierda
+AnchoEnCm=2.19
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[H11]
+Celda=H11
+Alineacion=Centrado
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Facturado/Cuota/100*100
+
+
+[A15]
+Celda=A15
+Alineacion=Izquierda
+AnchoEnCm=0.15
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+EstiloIzquierdo=0
+EstiloDerecho=0
+FondoEstilo=0
+
+
+[B13]
+Celda=B13
+Alineacion=Centrado
+AnchoEnCm=3.51
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial Black, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>ANUAL<T>
+
+[C13]
+Celda=C13
+Alineacion=Izquierda
+AnchoEnCm=2
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[D13]
+Celda=D13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial Black, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=SUma(Cuota)
+
+[E13]
+Celda=E13
+Alineacion=Izquierda
+AnchoEnCm=2.49
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[F13]
+Celda=F13
+Alineacion=Derecha
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial Black, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma( Facturado )
+
+[G13]
+Celda=G13
+Alineacion=Izquierda
+AnchoEnCm=2.19
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[H13]
+Celda=H13
+Alineacion=Centrado
+FormatoValidacion=(Monetario)
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial Black, 8, Negro, [Negritas]}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Suma(Facturado/Cuota/100*100)
+
+
+
+[Linea17]
+Clave=Pie
+Objetos=3
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A17]
+Celda=A17
+Alineacion=Izquierda
+AnchoEnCm=0.15
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B17]
+Celda=B17
+Alineacion=Izquierda
+AnchoEnCm=3.3
+AnchoTexto=18
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Usuario
+
+[C17]
+Celda=C17
+Alineacion=Derecha
+AnchoEnCm=15.89
+AnchoTexto=85
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no otros <BR>documentos que afectan el estado de cuenta del cliente.<T>
+
+
+
+
+
+
+
+
+
+[B15]
+Celda=B15
+Alineacion=Izquierda
+AnchoEnCm=19.2
+AnchoTexto=103
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación <BR>a la cuota de Ventas. El total de días vencidos sólamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
+
+EstiloMarco=0
+EstiloArriba=0
+EstiloAbajo=0
+EstiloIzquierdo=0
+EstiloDerecho=0
+FondoEstilo=0
+
+[A14]
+Celda=A14
+Alineacion=Izquierda
+AnchoEnCm=3
+AnchoTexto=16
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+
+
+
+
+
+
+
+
+
+
+[Linea16]
+Clave=Pie
+Objetos=3
+Seccion=Pie Página
+AltoEnCm=0.4
+Renglones=1
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+Fuente={Arial, 8, Negro, []}
+AVertical=Centrado
+
+[A16]
+Celda=A16
+Alineacion=Izquierda
+AnchoEnCm=0.15
+AnchoTexto=16
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+
+[B16]
+Celda=B16
+Alineacion=Izquierda
+AnchoEnCm=3.3
+AnchoTexto=18
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=Usuario
+
+[C16]
+Celda=C16
+Alineacion=Derecha
+AnchoEnCm=15.89
+AnchoTexto=85
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
+FondoColor=Blanco
+AVertical=Centrado
+TipoImagen=Estirada
+CBAncho=12
+CBMostrarCodigo=S
+CBDigitoVerificador=S
+CBTipo=UPC A
+CBTipoQR=Auto
+Fuente={Arial, 8, Negro, []}
+TablaAncho=(Auto)
+TablaAnchoCeldas=(Auto)
+TablaAnchoTituloRenglon=(Auto)
+TablaAnchoTotales=(Auto)
+Expresion=<T>Nota: El importe facturado considera facturas sin cancelar, pero no otros <BR>documentos que afectan el estado de cuenta del cliente.<T>
 
 
 
