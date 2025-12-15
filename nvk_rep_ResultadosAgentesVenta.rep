@@ -46,8 +46,8 @@ VistaIndependiente=S
 ListaCampos=(Lista)
 SQL=EXEC dbo.nvk_sp_ReporteVtasAgente <T>{Info.Ejercicio}<T>,<T>{Info.Periodo}<T>,<T>{Info.Agente}<T>,<T>{Info.Usuario}<T>
 [Formato]
-VentanaIzquierda=520
-VentanaArriba=154
+VentanaIzquierda=345
+VentanaArriba=89
 VentanaAltura=847
 VentanaAncho=1168
 PanelArriba=120
@@ -315,7 +315,7 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, [Negritas]}
+Fuente={Arial, 12, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
@@ -1647,7 +1647,7 @@ TablaAnchoTotales=(Auto)
 [H12]
 Celda=H12
 Alineacion=Centrado
-FormatoValidacion=(Monetario)
+FormatoValidacion=0.00
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -1863,7 +1863,7 @@ ImprimirAlFinal=N
 Clave=Pie
 Objetos=2
 Seccion=Pie Página
-AltoEnCm=0.4
+AltoEnCm=1
 Renglones=1
 FondoColor=Blanco
 Fuente={Arial, 8, Negro, []}
@@ -2139,7 +2139,7 @@ TablaAnchoTotales=(Auto)
 [H11]
 Celda=H11
 Alineacion=Centrado
-FormatoValidacion=(Monetario)
+FormatoValidacion=0.00
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -2349,7 +2349,7 @@ TablaAnchoTotales=(Auto)
 [H13]
 Celda=H13
 Alineacion=Centrado
-FormatoValidacion=(Monetario)
+FormatoValidacion=0.00
 AnchoEnCm=3
 AnchoTexto=16
 EstiloMarco=-1
@@ -2482,15 +2482,18 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación <BR>a la cuota de Ventas. El total de días vencidos sólamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
+Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación a la cuota de Ventas. El total de días vencidos sólamente refleja el retraso en pago de los clientes, no considera documentos no vnecidos.<T>
 
-EstiloMarco=0
-EstiloArriba=0
-EstiloAbajo=0
-EstiloIzquierdo=0
-EstiloDerecho=0
-FondoEstilo=0
+EstiloMarco=-1
+EstiloArriba=-1
+EstiloAbajo=-1
+EstiloIzquierdo=-1
+EstiloDerecho=-1
+FondoEstilo=-1
 
+TextoConFlujo=S
+AlturaVariable=N
+ExpresionMultiple=S
 [A14]
 Celda=A14
 Alineacion=Izquierda
@@ -2580,7 +2583,7 @@ CBMostrarCodigo=S
 CBDigitoVerificador=S
 CBTipo=UPC A
 CBTipoQR=Auto
-Fuente={Arial, 8, Negro, []}
+Fuente={Arial, 10, Negro, [Negritas]}
 TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
@@ -2671,6 +2674,44 @@ TipoAccion=Reportes Excel
 ClaveAccion=nvk_rep_ResultadosAgentesVenta
 Activo=S
 Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
