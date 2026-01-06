@@ -1,10 +1,10 @@
 
 [Reporte]
 Clave=nvk_rep_ResultadosAgentesVenta
-Nombre=<T>Resultados de Agentes de Venta<T>
+Nombre=<T>Cuota Mensual x Agente<T>
 Icono=0
 Tipo=Reporte
-ImpresoraEspecifica=(por Omisión)
+ImpresoraEspecifica=(por OmisiÃ³n)
 ImpresoraPixeles=(Auto)
 ImpresoraFactor=(Auto)
 ImpresoraAlto=(Auto)
@@ -30,7 +30,7 @@ BarraHerramientas=S
 OtroOrden=S
 VistaEspecial=S
 ListaOrden=(Lista)
-PosicionInicialAlturaCliente=912
+PosicionInicialAlturaCliente=867
 PosicionInicialAncho=972
 ConFormaPrevia=S
 FormaPrevia=nvk_EspecificarEjercicioPeriodoAgente_Res
@@ -46,14 +46,14 @@ VistaIndependiente=S
 ListaCampos=(Lista)
 SQL=EXEC dbo.nvk_sp_ReporteVtasAgente <T>{Info.Ejercicio}<T>,<T>{Info.Periodo}<T>,<T>{Info.Agente}<T>,<T>{Info.Usuario}<T>
 [Formato]
-VentanaIzquierda=345
-VentanaArriba=89
+VentanaIzquierda=498
+VentanaArriba=94
 VentanaAltura=847
 VentanaAncho=1168
 PanelArriba=120
 PanelBotones=80
 
-ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>Título<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Periodo<BR>Fin: Trimestre<BR>Fin: Agente<BR>Pie<BR>Pie<BR>Pie
+ListaLineas=Encabezado<BR>Encabezado<BR>Encabezado<BR>Encabezado<BR>TÃ­tulo<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Agente<BR>Inicio: Periodo<BR>Fin: Trimestre<BR>Fin: Agente<BR>Pie<BR>Pie<BR>Pie
 [Gerente]
 Clave=Gerente
 Nombre=Gerente
@@ -73,7 +73,7 @@ Visible=S
 OpcionesColumnas=1
 OpcionesRenglones=8
 TamanoValidacion=10
-TipoDatos=Numérico
+TipoDatos=NumÃ©rico
 ClaveBDE=Ejercicio
 
 [Agente]
@@ -134,7 +134,7 @@ ClaveBDE=Facturado
 [Linea1]
 Clave=Encabezado
 Objetos=2
-Seccion=Encabezado Página
+Seccion=Encabezado PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
@@ -144,7 +144,7 @@ AVertical=Centrado
 [Linea2]
 Clave=Encabezado
 Objetos=4
-Seccion=Encabezado Página
+Seccion=Encabezado PÃ¡gina
 AltoEnCm=2
 Renglones=1
 FondoColor=Blanco
@@ -160,7 +160,7 @@ FondoEstilo=-1
 [Linea3]
 Clave=Encabezado
 Objetos=3
-Seccion=Encabezado Página
+Seccion=Encabezado PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
@@ -175,7 +175,7 @@ EstiloDerecho=-1
 FondoEstilo=-1
 [Linea4]
 Clave=Encabezado
-Seccion=Encabezado Página
+Seccion=Encabezado PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 EstiloMarco=-1
@@ -191,8 +191,8 @@ EstiloIzquierdo=-1
 EstiloDerecho=-1
 FondoEstilo=-1
 [Linea5]
-Clave=Título
-Seccion=Título
+Clave=TÃ­tulo
+Seccion=TÃ­tulo
 AltoEnCm=0.4
 Renglones=1
 Marco=N
@@ -320,7 +320,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>RESULTADOS DE AGENTES DE VENTA<T><BR>SQL(<T>SELECT Nombre FROM Empresa WHERE Empresa=:tEmpresa<T>,Empresa)
+Expresion=<T>CUOTA MENSUAL POR AGENTE<T><BR>SQL(<T>SELECT Nombre FROM Empresa WHERE Empresa=:tEmpresa<T>,Empresa)
 
 EstiloMarco=-1
 EstiloArriba=-1
@@ -850,7 +850,7 @@ Visible=S
 OpcionesColumnas=1
 OpcionesRenglones=8
 TamanoValidacion=10
-TipoDatos=Numérico
+TipoDatos=NumÃ©rico
 ClaveBDE=Periodo
 
 [Cuota]
@@ -985,7 +985,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>División<T>
+Expresion=<T>DivisiÃ³n<T>
 
 
 
@@ -1207,7 +1207,7 @@ Visible=S
 OpcionesColumnas=1
 OpcionesRenglones=8
 TamanoValidacion=10
-TipoDatos=Numérico
+TipoDatos=NumÃ©rico
 ClaveBDE=Trimestre
 
 
@@ -1278,7 +1278,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=Caso  Trimestre<BR>  Es 1 Entonces <T>1° TRIM<T><BR>  Es 2 Entonces <T>2° TRIM<T><BR>  Es 3 Entonces <T>3° TRIM<T><BR>  Es 4 Entonces <T>4° TRIM<T><BR>Sino<BR><T><T><BR>Fin
+Expresion=Caso  Trimestre<BR>  Es 1 Entonces <T>1Â° TRIM<T><BR>  Es 2 Entonces <T>2Â° TRIM<T><BR>  Es 3 Entonces <T>3Â° TRIM<T><BR>  Es 4 Entonces <T>4Â° TRIM<T><BR>Sino<BR><T><T><BR>Fin
 
 
 
@@ -1451,7 +1451,7 @@ TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
 
 FormatoValidacion=
-Expresion=<T>%Fac<T>
+Expresion=<T>%<T>
 
 
 [C12]
@@ -1669,7 +1669,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=SUMA(Facturado/Cuota/100*100)
+Expresion=SUMA(Facturado)/Suma(Cuota)*100
 
 [B14]
 Celda=B14
@@ -1689,7 +1689,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación <BR>a la cuota de Ventas. El total de días vencidos sólamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
+Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparaciÃ³n <BR>a la cuota de Ventas. El total de dÃ­as vencidos sÃ³lamente refleja el cretaso en <BR>pago de los clientes, no considera documentos no vnecidos.<T>
 
 
 
@@ -1845,7 +1845,7 @@ Trimestre=(Fin)
 [Linea14]
 Clave=Pie
 Objetos=1
-Seccion=Pie Página
+Seccion=Pie PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 EstiloMarco=-1
@@ -1862,7 +1862,7 @@ ImprimirAlFinal=N
 [Linea15]
 Clave=Pie
 Objetos=2
-Seccion=Pie Página
+Seccion=Pie PÃ¡gina
 AltoEnCm=1
 Renglones=1
 FondoColor=Blanco
@@ -1900,7 +1900,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>GENERADOR POR AGENTE, PARA EL AÑO<T>+<T> <T>+Ejercicio+<T>.<T>
+Expresion=<T>GENERADOR POR AGENTE, PARA EL AÃ‘O<T>+<T> <T>+Ejercicio+<T>.<T>
 
 [D4]
 Celda=D4
@@ -2161,7 +2161,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=Facturado/Cuota/100*100
+Expresion=Facturado/Cuota*100
 
 
 [A15]
@@ -2371,14 +2371,14 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=Suma(Facturado/Cuota/100*100)
+Expresion=Suma(Facturado)/Suma(Cuota)*100
 
 
 
 [Linea17]
 Clave=Pie
 Objetos=3
-Seccion=Pie Página
+Seccion=Pie PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 FondoColor=Blanco
@@ -2482,7 +2482,7 @@ TablaAncho=(Auto)
 TablaAnchoCeldas=(Auto)
 TablaAnchoTituloRenglon=(Auto)
 TablaAnchoTotales=(Auto)
-Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparación a la cuota de Ventas. El total de días vencidos sólamente refleja el retraso en pago de los clientes, no considera documentos no vnecidos.<T>
+Expresion=<T>%Fac = Porcentaje facturado (Surtido), todos los porcentajes son en comparaciÃ³n a la cuota de Ventas. El total de dÃ­as vencidos sÃ³lamente refleja el retraso en pago de los clientes, no considera documentos no vnecidos.<T>
 
 EstiloMarco=-1
 EstiloArriba=-1
@@ -2532,7 +2532,7 @@ TablaAnchoTotales=(Auto)
 [Linea16]
 Clave=Pie
 Objetos=3
-Seccion=Pie Página
+Seccion=Pie PÃ¡gina
 AltoEnCm=0.4
 Renglones=1
 EstiloMarco=-1
@@ -2674,6 +2674,64 @@ TipoAccion=Reportes Excel
 ClaveAccion=nvk_rep_ResultadosAgentesVenta
 Activo=S
 Visible=S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
